@@ -3,6 +3,8 @@ import 'screens/chat_screen.dart';
 import 'screens/search_screen.dart';
 import 'screens/settings_screen.dart';
 import 'screens/study_buddies_screen.dart';
+import 'screens/login_screen.dart';
+import 'screens/register_screen.dart';
 
 void main() {
   runApp(StudyBuddyApp());
@@ -17,7 +19,12 @@ class StudyBuddyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => LoginScreen(),  // Default to Login Screen
+        '/home': (context) => HomeScreen(), // Navigate here after login
+        '/register': (context) => RegisterScreen(), // Navigate to register
+      },
     );
   }
 }
@@ -51,10 +58,8 @@ class _HomeScreenState extends State<HomeScreen> {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.chat), label: "Chat"),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.people), label: "Study Buddies"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.settings), label: "Settings"),
+          BottomNavigationBarItem(icon: Icon(Icons.people), label: "Study Buddies"),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
         ],
         type: BottomNavigationBarType.fixed,
       ),
