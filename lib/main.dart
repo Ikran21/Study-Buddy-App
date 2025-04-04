@@ -3,6 +3,9 @@ import 'screens/chat_screen.dart';
 import 'screens/search_screen.dart';
 import 'screens/settings_screen.dart';
 import 'screens/study_buddies_screen.dart';
+import 'screens/matchmaking_screen.dart';
+import 'test_api_call.dart';
+
 
 void main() {
   runApp(StudyBuddyApp());
@@ -17,7 +20,7 @@ class StudyBuddyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: StudyBuddiesScreen(),
     );
   }
 }
