@@ -5,6 +5,7 @@ import 'screens/settings_screen.dart';
 import 'screens/study_buddies_screen.dart';
 import 'screens/matchmaking_screen.dart';
 import 'test_api_call.dart';
+import 'screens/more_about_you_screen.dart';
 
 
 void main() {
@@ -20,7 +21,7 @@ class StudyBuddyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: StudyBuddiesScreen(),
+      home: MoreAboutYouScreen(),
     );
   }
 }
