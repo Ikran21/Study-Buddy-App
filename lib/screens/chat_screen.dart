@@ -72,7 +72,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 return ListView.separated(
                   itemCount: snapshot.data!.docs.length,
                   separatorBuilder: (context, index) => Divider(height: 1),
-                  itemBuilder: (context, index) {
+              itemBuilder: (context, index) {
                     final chatData = snapshot.data!.docs[index].data() as Map<String, dynamic>;
                     final otherUserId = chatData['userId'];
                     final lastMessage = chatData['lastMessage'] ?? '';
@@ -83,8 +83,8 @@ class _ChatScreenState extends State<ChatScreen> {
                       future: _userService.getUser(otherUserId),
                       builder: (context, userSnapshot) {
                         if (!userSnapshot.hasData) {
-                          return ListTile(
-                            leading: CircleAvatar(child: Icon(Icons.person)),
+                return ListTile(
+                  leading: CircleAvatar(child: Icon(Icons.person)),
                             title: Text('Loading...'),
                           );
                         }
@@ -191,8 +191,8 @@ class _ChatScreenState extends State<ChatScreen> {
                 );
               },
             ),
-          ),
-        );
+      ),
+    );
       },
     );
   }
