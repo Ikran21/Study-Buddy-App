@@ -11,74 +11,116 @@ class LoginPage extends StatelessWidget {
   final passwordController = TextEditingController();
 
   // sign in button
-  void Signuserin() async{
+  void Signuserin() async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: emailController.text, 
+      email: emailController.text,
       password: passwordController.text,
-      );
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: SafeArea(
-        child: Center(
+        child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 30),
-
-              // logo
-              Icon(
-                Icons.lock,
-                size: 100,
+              // Background Image
+              Image.asset(
+                "assets/images/gsu_study.jpeg",
+                width: double.infinity,
+                height: 300,
+                fit: BoxFit.cover,
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 20),
 
-              // welcome back message
-              Text(
-                "Welcome to Study Buddy",
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16,
-                ),
-              ),
-              SizedBox(height: 30),
-
-              // username text field
-              MyTextfield(
-                controller: emailController,
-                hintText: "enter Email",
-                obscureText: false,
-              ),
-              SizedBox(height: 30),
-
-              // password text field
-              MyTextfield(
-                controller: passwordController,
-                hintText: "enter password",
-                obscureText: true,
-              ),
-
-              //Add forgot password, 
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 1),
+              // Welcome message
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 35),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text("Forgot Password?",
-                    style: TextStyle(color: Colors.grey),),
+                    Text(
+                      "Welcome to Study Buddy!",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ],
                 ),
               ),
-              SizedBox(height: 30),
-              //signin button, 
-              MyButton(
-                onTap: Signuserin,
-                
-              )
-              
-              //social sign-in options here
+
+              // Subtitle message
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 35),
+                child: Row(
+                  children: [
+                    Text(
+                      "Find a study buddy near you",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+
+              // Username text field
+              MyTextfield(
+                controller: emailController,
+                hintText: "Enter Email",
+                obscureText: false,
+              ),
+              const SizedBox(height: 20),
+
+              // Password text field
+              MyTextfield(
+                controller: passwordController,
+                hintText: "Enter Password",
+                obscureText: true,
+              ),
+              const SizedBox(height: 15),
+
+              // Forgot password
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 35),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 1),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Forgot Password?",
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 30),
+
+              // Sign-in button
+              MyButton(onTap: Signuserin),
+
+              // Register / sign-up
+              const SizedBox(height: 15),
+              Center(
+                child: Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("Not a member? "),
+                      Text(
+                        "Sign up Now",
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
