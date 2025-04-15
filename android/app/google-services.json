@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "647963323687",
+    "project_id": "home-screen-bd2a8",
+    "storage_bucket": "home-screen-bd2a8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647963323687:android:c7f88e78286a40f0f30d02",
+        "android_client_info": {
+          "package_name": "com.example.home_page_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHLVa_1TRvV-JINB7crFZskD2djbzFpYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647963323687:android:e4afbb8eb7cec1ddf30d02",
+        "android_client_info": {
+          "package_name": "com.example.study_buddy_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHLVa_1TRvV-JINB7crFZskD2djbzFpYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
